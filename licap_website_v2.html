@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LICAP Consultancy FZCO — Lead Arranger | Energy Transition Advisory</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --dark: #0D1B2A;
+  --teal: #1B8CA6;
+  --gold: #C9A84C;
+  --light: #F7F9FB;
+  --mid: #8899AA;
+  --border: #D0DCE8;
+  --white: #FFFFFF;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  background: var(--white);
+  color: var(--dark);
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(13, 27, 42, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  padding: 18px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: 0.5px;
+}
+
+.nav-logo span { color: var(--gold); }
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  background: var(--dark);
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 50%, rgba(27,140,166,0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(201,168,76,0.08) 0%, transparent 60%);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--teal), var(--gold));
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 60px;
+  padding-top: 80px;
+}
+
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(48px, 6vw, 80px);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.05;
+  margin-bottom: 32px;
+  letter-spacing: -0.5px;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--teal);
+}
+
+.hero-desc {
+  font-size: 16px;
+  color: rgba(255,255,255,0.6);
+  max-width: 560px;
+  line-height: 1.8;
+  margin-bottom: 48px;
+}
+
+.hero-pills {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 56px;
+}
+
+.pill {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.7);
+  padding: 6px 16px;
+  border-radius: 2px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.pill.gold {
+  background: rgba(201,168,76,0.12);
+  border-color: rgba(201,168,76,0.3);
+  color: var(--gold);
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gold);
+  color: var(--dark);
+  padding: 14px 32px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.hero-cta:hover {
+  background: var(--teal);
+  color: var(--white);
+}
+
+.hero-cta::after {
+  content: '→';
+  transition: transform 0.3s;
+}
+
+.hero-cta:hover::after { transform: translateX(4px); }
+
+/* SECTION BASE */
+section {
+  padding: 100px 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.sec-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sec-label::before {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.sec-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -0.3px;
+}
+
+/* WHAT WE DO */
+.what {
+  background: var(--light);
+}
+
+.what-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  margin-top: 60px;
+}
+
+.what-text p {
+  color: #445566;
+  margin-bottom: 20px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.what-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.what-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--teal);
+  padding: 24px 28px;
+}
+
+.what-card.gold-l { border-left-color: var(--gold); }
+
+.what-card h4 {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--dark);
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.what-card p {
+  font-size: 13.5px;
+  color: #667788;
+  line-height: 1.65;
+}
+
+/* MANDATE */
+.mandate {
+  background: var(--dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.mandate::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(ellipse 80% 80% at 80% 50%, rgba(27,140,166,0.08) 0%, transparent 70%);
+}
+
+.mandate .sec-title { color: var(--white); }
+.mandate .sec-label { }
+
+.mandate-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.mandate-item {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: 40px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+
+.mandate-item:hover { background: rgba(255,255,255,0.06); }
+
+.mandate-item::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--teal);
+}
+
+.mandate-item.gold::before { background: var(--gold); }
+.mandate-item.green::before { background: #1A7A4A; }
+
+.mandate-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.08);
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.mandate-item h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.mandate-item p {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7;
+}
+
+/* ABOUT */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: start;
+  margin-top: 60px;
+}
+
+.about-left {}
+
+.about-left p {
+  color: #445566;
+  margin-bottom: 20px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-top: 8px;
+}
+
+.stat {
+  background: var(--light);
+  border: 1px solid var(--border);
+  padding: 24px;
+}
+
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--dark);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.stat-num span { color: var(--teal); font-size: 20px; }
+
+.stat-label {
+  font-size: 11px;
+  color: var(--mid);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.about-right {}
+
+.profile-card {
+  background: var(--dark);
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--teal));
+}
+
+.profile-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.profile-title {
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  font-weight: 500;
+}
+
+.profile-bio {
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+.profile-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.profile-tag {
+  background: rgba(27,140,166,0.12);
+  border: 1px solid rgba(27,140,166,0.25);
+  color: var(--teal);
+  padding: 4px 12px;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+/* SECTORS */
+.sectors {
+  background: var(--light);
+}
+
+.sectors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  margin-top: 60px;
+}
+
+.sector-item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 36px;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  transition: border-color 0.3s;
+}
+
+.sector-item:hover { border-color: var(--teal); }
+
+.sector-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+.sector-content h4 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+
+.sector-content p {
+  font-size: 13.5px;
+  color: #667788;
+  line-height: 1.65;
+}
+
+/* CONTACT */
+.contact {
+  background: var(--dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 50% 80% at 0% 50%, rgba(201,168,76,0.07) 0%, transparent 60%);
+}
+
+.contact-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contact .sec-title { color: var(--white); }
+
+.contact-text {
+  font-size: 15px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.8;
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-item-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.contact-item-value {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+}
+
+.contact-right {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: 48px;
+}
+
+.contact-right h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.contact-right p {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(201,168,76,0.3);
+  padding-bottom: 4px;
+  transition: all 0.3s;
+  margin-bottom: 16px;
+  display: block;
+  width: fit-content;
+}
+
+.contact-link:hover {
+  color: var(--teal);
+  border-color: var(--teal);
+}
+
+/* FOOTER */
+footer {
+  background: #07111C;
+  padding: 24px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(201,168,76,0.15);
+}
+
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: rgba(255,255,255,0.4);
+}
+
+.footer-logo span { color: var(--gold); }
+
+.footer-text {
+  font-size: 11px;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.5px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-eyebrow { animation: fadeUp 0.8s ease 0.2s both; }
+.hero-title { animation: fadeUp 0.8s ease 0.4s both; }
+.hero-desc { animation: fadeUp 0.8s ease 0.6s both; }
+.hero-pills { animation: fadeUp 0.8s ease 0.7s both; }
+.hero-cta { animation: fadeUp 0.8s ease 0.8s both; }
+
+@media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  .nav-links { display: none; }
+  .hero-inner, .container { padding: 0 24px; }
+  .hero-inner { padding-top: 100px; }
+  .what-grid, .about-grid, .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+  .mandate-grid, .sectors-grid { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">LICAP <span>Consultancy</span></div>
+  <ul class="nav-links">
+    <li><a href="#what">What We Do</a></li>
+    <li><a href="#mandate">Mandate</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#sectors">Sectors</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">LICAP Consultancy FZCO &nbsp;·&nbsp; Dubai, UAE</div>
+    <h1 class="hero-title">
+      Boutique Advisory<br>for <em>Energy Transition</em><br>Capital Raises
+    </h1>
+    <p class="hero-desc">
+      We act as Lead Arranger for growth-stage energy transition companies — structuring capital raises, managing the investor process and originating deals across global markets.
+    </p>
+    <div class="hero-pills">
+      <span class="pill gold">Lead Arranger</span>
+      <span class="pill">Series A &amp; Growth</span>
+      <span class="pill">Energy Transition</span>
+      <span class="pill">Cross-Border</span>
+      <span class="pill">Gulf &amp; International</span>
+    </div>
+    <a href="#contact" class="hero-cta">Get in Touch</a>
+  </div>
+</div>
+
+<!-- WHAT WE DO -->
+<section class="what" id="what">
+  <div class="container">
+    <div class="sec-label">Our Role</div>
+    <h2 class="sec-title">What We Do</h2>
+    <div class="what-grid">
+      <div class="what-text">
+        <p>LICAP Consultancy FZCO is a UAE-based boutique advisory firm specialising in energy transition capital raises and deal origination. We act as Lead Arranger — the principal coordinating party between technology companies and institutional investors.</p>
+        <p>We manage the full capital raise lifecycle: from structuring the transaction and preparing investor materials, to coordinating outreach, managing the information process and supporting through to close.</p>
+        <p>Our lean, principal-led model allows us to move with the speed and focus that early and growth stage companies require — without the institutional overhead of a larger advisory house.</p>
+      </div>
+      <div class="what-cards">
+        <div class="what-card">
+          <h4>Lead Arrangement</h4>
+          <p>We act as mandated Lead Arranger — structuring the raise, coordinating investor introductions and managing the full information process from NDA to close.</p>
+        </div>
+        <div class="what-card gold-l">
+          <h4>Deal Origination</h4>
+          <p>We identify and develop deal opportunities across energy transition and alternative asset sectors, connecting technology companies with aligned institutional and strategic capital.</p>
+        </div>
+        <div class="what-card">
+          <h4>Investor Relations</h4>
+          <p>We manage the investor process — materials preparation, outreach sequencing, NDA management, due diligence coordination and close.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MANDATE -->
+<section class="mandate" id="mandate">
+  <div class="container">
+    <div class="sec-label">Our Focus</div>
+    <h2 class="sec-title" style="color:white;">Our Mandate</h2>
+    <div class="mandate-grid">
+      <div class="mandate-item">
+        <div class="mandate-num">01</div>
+        <h3>Energy Transition</h3>
+        <p>Direct Lithium Extraction, battery supply chain, clean technology and industrial decarbonisation — companies at the intersection of resource efficiency and energy transition.</p>
+      </div>
+      <div class="mandate-item gold">
+        <div class="mandate-num">02</div>
+        <h3>Gulf &amp; International</h3>
+        <p>Cross-border transactions with a Gulf focus — leveraging deep regional relationships and access to sovereign, institutional and strategic capital across the GCC and global markets.</p>
+      </div>
+      <div class="mandate-item green">
+        <div class="mandate-num">03</div>
+        <h3>Series A &amp; Growth</h3>
+        <p>Technology companies raising Series A through growth equity — typically USD 5M to USD 50M — where institutional process management and investor access create meaningful value.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="sec-label">The Team</div>
+    <h2 class="sec-title">About LICAP</h2>
+    <div class="about-grid">
+      <div class="about-left">
+        <p>LICAP Consultancy FZCO is incorporated in the IFZA Free Zone, Dubai Silicon Oasis, Dubai, United Arab Emirates. We operate as a principal-led advisory vehicle — lean by design, with the focus and accountability that institutional mandates require.</p>
+        <p>Our work spans capital raises, M&amp;A introductions and strategic advisory across energy transition and alternative asset sectors. We bring institutional process discipline to transactions that benefit from dedicated, experienced deal leadership.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <div class="stat-num">UAE<span> Based</span></div>
+            <div class="stat-label">IFZA Free Zone, Dubai</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">Multi<span>-Market</span></div>
+            <div class="stat-label">Active Pipeline</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">Global<span> Reach</span></div>
+            <div class="stat-label">Investor Network</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">English<span> Law</span></div>
+            <div class="stat-label">DIFC Framework</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="profile-card">
+          <div class="profile-name">Alexandre Assaad</div>
+          <div class="profile-title">Managing Director &nbsp;·&nbsp; Lead Arranger</div>
+          <p class="profile-bio">Alexandre is the founder and Managing Director of LICAP Consultancy FZCO. He acts as Lead Arranger for energy transition capital raises, with a focus on cross-border transactions across the Gulf and international markets. His work encompasses deal origination, investor relationship management and transaction structuring across energy transition and alternative asset sectors.</p>
+          <div class="profile-tags">
+            <span class="profile-tag">Lead Arrangement</span>
+            <span class="profile-tag">Energy Transition</span>
+            <span class="profile-tag">Gulf Markets</span>
+            <span class="profile-tag">Capital Raises</span>
+            <span class="profile-tag">Deal Origination</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section class="sectors" id="sectors">
+  <div class="container">
+    <div class="sec-label">Coverage</div>
+    <h2 class="sec-title">Sectors &amp; Focus Areas</h2>
+    <div class="sectors-grid">
+      <div class="sector-item">
+        <div class="sector-icon">⚡</div>
+        <div class="sector-content">
+          <h4>Energy Transition &amp; Critical Minerals</h4>
+          <p>Clean technology companies in the energy transition space — including Direct Lithium Extraction, battery supply chain and industrial decarbonisation — with Gulf and international deployment pathways.</p>
+        </div>
+      </div>
+      <div class="sector-item">
+        <div class="sector-icon">🏗️</div>
+        <div class="sector-content">
+          <h4>Infrastructure &amp; Rail</h4>
+          <p>Infrastructure transactions across the Gulf and MENA region — including rail and metro projects, project finance structures and strategic partnerships with regional contractors and developers.</p>
+        </div>
+      </div>
+      <div class="sector-item">
+        <div class="sector-icon">⚽</div>
+        <div class="sector-content">
+          <h4>Sports M&amp;A</h4>
+          <p>Football club acquisitions and sports asset transactions across European leagues — connecting buyers with acquisition targets and advising on deal structuring across Spain, Portugal and Italy.</p>
+        </div>
+      </div>
+      <div class="sector-item">
+        <div class="sector-icon">🌍</div>
+        <div class="sector-content">
+          <h4>Gulf &amp; Cross-Border Advisory</h4>
+          <p>Cross-border transactions with a Gulf focus — leveraging established regional relationships and access to sovereign, institutional and strategic capital across the GCC and international markets.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div>
+        <div class="sec-label">Get in Touch</div>
+        <h2 class="sec-title">Contact</h2>
+        <p class="contact-text">We welcome enquiries from investors, technology companies and strategic partners aligned with our energy transition mandate. All discussions are treated with the highest level of confidentiality.</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <span class="contact-item-label">Managing Director</span>
+            <span class="contact-item-value">Alexandre Assaad</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-label">Registered Address</span>
+            <span class="contact-item-value">IFZA Business Park, DDP, Building A1<br>Dubai Digital Park, Dubai Silicon Oasis<br>Dubai, UAE</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-label">Jurisdiction</span>
+            <span class="contact-item-value">IFZA Free Zone, Dubai Silicon Oasis, Dubai, UAE</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-right">
+        <h3>Investor &amp; Partner Enquiries</h3>
+        <p>If you are an investor, technology company or strategic partner and would like to discuss current mandates or explore how we can work together, please reach out directly.</p>
+        <a href="mailto:alexassaad@licap.co" class="contact-link">alexassaad@licap.co</a>
+        <a href="https://www.linkedin.com/in/alexandre-assaad" target="_blank" class="contact-link">LinkedIn Profile →</a>
+        <br>
+        <p style="font-size:12px; color:rgba(255,255,255,0.25); margin-top:24px; line-height:1.6;">LICAP Consultancy FZCO is incorporated in the IFZA Free Zone, Dubai Silicon Oasis, Dubai, United Arab Emirates. All transactions are governed by English law under the DIFC framework.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">LICAP <span>Consultancy</span> FZCO</div>
+  <div class="footer-text">© 2026 LICAP Consultancy FZCO · IFZA Free Zone, UAE · All rights reserved</div>
+</footer>
+
+</body>
+</html>
